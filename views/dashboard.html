@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <h1>Bem-vindo, {{username}}</h1>
+        <form action="/logout" method="POST">
+            <button type="submit" class="logout">Logout</button>
+        </form>
+
+        <div id="Resultado"></div>
+
+        <button onclick="exibirStatus(200)">Status 200</button>
+        <button onclick="exibirStatus(404)">Status 404</button>
+        <button onclick="exibirStatus(500)">Status 500</button>
+        <button onclick="exibirStatus(403)">Status 403</button>
+        <button onclick="exibirStatus(401)">Status 401</button>
+    </div>
+
+    <script>
+        function exibirStatus(codigo) {
+            const resultadoDiv = document.getElementById('Resultado');
+            resultadoDiv.innerHTML = `Código de status: ${codigo}`;
+        }
+    </script>
+</body>
+
+</html>
